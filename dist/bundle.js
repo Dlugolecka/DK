@@ -28,6 +28,21 @@ function createHeader(app) {
 }
 module.exports = createHeader;
 
+/***/ }),
+/* 3 */
+/***/ ((module) => {
+
+function createFooter(app) {
+  var footer = document.createElement("footer");
+  var content = document.createElement('p');
+  content.textContent = "Drum Kit © 2023 ";
+  footer.className = "footer--container ";
+  content.className = "footer--content";
+  footer.appendChild(content);
+  app.appendChild(footer);
+}
+module.exports = createFooter;
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -106,10 +121,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_js_app_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_src_js_app_js__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var _src_js_header_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(2);
 /* harmony import */ var _src_js_header_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_src_js_header_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_js_footer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
+/* harmony import */ var _src_js_footer_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_js_footer_js__WEBPACK_IMPORTED_MODULE_2__);
+
 
 
 var app = _src_js_app_js__WEBPACK_IMPORTED_MODULE_0___default()();
 _src_js_header_js__WEBPACK_IMPORTED_MODULE_1___default()(app);
+_src_js_footer_js__WEBPACK_IMPORTED_MODULE_2___default()(app);
 })();
 
 /******/ })()
