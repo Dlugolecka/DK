@@ -43,6 +43,67 @@ function createFooter(app) {
 }
 module.exports = createFooter;
 
+/***/ }),
+/* 4 */
+/***/ ((module) => {
+
+var config = {
+  div: {
+    "class": [""],
+    children: [{
+      tag: "button",
+      "class": ["btn"],
+      text: "W"
+    }, {
+      tag: "button",
+      "class": ["btn"],
+      text: "S"
+    }, {
+      tag: "button",
+      "class": ["btn"],
+      text: "D"
+    }, {
+      tag: "button",
+      "class": ["btn"],
+      text: "F"
+    }, {
+      tag: "button",
+      "class": ["btn"],
+      text: "G"
+    }, {
+      tag: "button",
+      "class": ["btn"],
+      text: "H"
+    }, {
+      tag: "button",
+      "class": ["btn"],
+      text: "J"
+    }, {
+      tag: "button",
+      "class": ["btn"],
+      text: "K"
+    }, {
+      tag: "button",
+      "class": ["btn"],
+      text: "L"
+    }]
+  }
+};
+function createKeyboard(app) {
+  var tag = Object.keys(config)[0];
+  var tag_container = document.createElement(tag);
+  app.appendChild(tag_container);
+  if (config[tag].children && config[tag].children.length) {
+    config[tag].children.forEach(function (element) {
+      var tagEl = document.createElement(element.tag);
+      tagEl.textContent = element.text;
+      tagEl.className = element["class"];
+      tag_container.appendChild(tagEl);
+    });
+  } else console.log('nie dziala');
+}
+module.exports = createKeyboard;
+
 /***/ })
 /******/ 	]);
 /************************************************************************/
@@ -123,11 +184,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _src_js_header_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_src_js_header_js__WEBPACK_IMPORTED_MODULE_1__);
 /* harmony import */ var _src_js_footer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(3);
 /* harmony import */ var _src_js_footer_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_js_footer_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _src_js_content_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(4);
+/* harmony import */ var _src_js_content_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_src_js_content_js__WEBPACK_IMPORTED_MODULE_3__);
+
 
 
 
 var app = _src_js_app_js__WEBPACK_IMPORTED_MODULE_0___default()();
 _src_js_header_js__WEBPACK_IMPORTED_MODULE_1___default()(app);
+_src_js_content_js__WEBPACK_IMPORTED_MODULE_3___default()(app);
 _src_js_footer_js__WEBPACK_IMPORTED_MODULE_2___default()(app);
 })();
 
