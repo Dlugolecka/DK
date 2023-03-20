@@ -357,7 +357,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #393232; }\n\n#app {\n  display: flex;\n  flex-flow: column wrap;\n  background-color: #cc8888; }\n\n.header--container {\n  background-color: #8d6262;\n  border-bottom: 2px solid #000000;\n  height: 60px; }\n\n.heading--text {\n  margin: 0;\n  padding: 5px;\n  display: flex;\n  justify-content: center;\n  width: 100%; }\n\n.container {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center;\n  align-content: baseline;\n  height: calc(100vh - 100px); }\n\n.btn {\n  background-color: #4d4545;\n  height: 120px;\n  width: 180px;\n  margin: 15px;\n  border-radius: 20px;\n  color: #ffffff; }\n\n.footer--container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: #8d6262;\n  height: 40px; }\n\n*, *::after, *::before {\n  box-sizing: border-box; }\n\nhtml, body {\n  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n  font-size: 1rem;\n  margin: 0; }\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\n  background-color: #393232; }\n\n#app {\n  display: flex;\n  flex-flow: column wrap;\n  color: #f5f5f5; }\n\n.header--container {\n  background-color: #424242;\n  border-bottom: 2px solid #000000;\n  height: 60px; }\n\n.heading--text {\n  margin: 0;\n  padding: 5px;\n  display: flex;\n  justify-content: center;\n  width: 100%; }\n\n.keyboard--container {\n  background-color: #303030;\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center;\n  align-content: baseline;\n  height: calc(100vh - 100px); }\n\n.keyboard--section {\n  display: flex;\n  flex-flow: row wrap;\n  justify-content: center; }\n\n.btn {\n  display: flex;\n  flex-flow: column nowrap;\n  justify-content: center;\n  align-items: center;\n  background-color: #424242;\n  height: 100px;\n  width: 180px;\n  line-height: 1.5rem;\n  margin: 15px;\n  color: #f5f5f5;\n  border: 1px solid white;\n  transition: 0.5s; }\n\n.btn:hover {\n  background-color: #2e2e2e;\n  color: #2d73fe;\n  letter-spacing: 0.25rem;\n  box-shadow: 0 0 35px #1764fe;\n  border: 1px solid #1764fe;\n  cursor: pointer; }\n\n.footer--container {\n  display: flex;\n  justify-content: center;\n  align-items: center;\n  background-color: #424242;\n  height: 40px; }\n\n*, *::after, *::before {\n  box-sizing: border-box; }\n\nhtml, body {\n  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;\n  font-size: 1rem;\n  margin: 0; }\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -530,7 +530,7 @@ module.exports = createFooter;
 
 var config = {
   div: {
-    "class": ["container"],
+    "class": ["keyboard--container"],
     children: [{
       tag: "section",
       "class": ["heading--section"],
@@ -545,48 +545,93 @@ var config = {
       children: [{
         tag: "button",
         "class": ["btn"],
-        text: "W",
-        parText: "CLAP"
+        children: [{
+          tag: "span",
+          text: "W"
+        }, {
+          tag: "span",
+          text: "CLAP"
+        }]
       }, {
         tag: "button",
         "class": ["btn"],
-        text: "S",
-        parText: "CLAP"
+        children: [{
+          tag: "span",
+          text: "S"
+        }, {
+          tag: "span",
+          text: "HIHAT"
+        }]
       }, {
         tag: "button",
         "class": ["btn"],
-        text: "D",
-        parText: "CLAP"
+        children: [{
+          tag: "span",
+          text: "D"
+        }, {
+          tag: "span",
+          text: "KICK"
+        }]
       }, {
         tag: "button",
         "class": ["btn"],
-        text: "F",
-        parText: "CLAP"
+        children: [{
+          tag: "span",
+          text: "F"
+        }, {
+          tag: "span",
+          text: "OPENHAT"
+        }]
       }, {
         tag: "button",
         "class": ["btn"],
-        text: "G",
-        parText: "CLAP"
+        children: [{
+          tag: "span",
+          text: "G"
+        }, {
+          tag: "span",
+          text: "BOOM"
+        }]
       }, {
         tag: "button",
         "class": ["btn"],
-        text: "H",
-        parText: "CLAP"
+        children: [{
+          tag: "span",
+          text: "H"
+        }, {
+          tag: "span",
+          text: "RIDE"
+        }]
       }, {
         tag: "button",
         "class": ["btn"],
-        text: "J",
-        parText: "CLAP"
+        children: [{
+          tag: "span",
+          text: "J"
+        }, {
+          tag: "span",
+          text: "SNARE"
+        }]
       }, {
         tag: "button",
         "class": ["btn"],
-        text: "K",
-        parText: "CLAP"
+        children: [{
+          tag: "span",
+          text: "K"
+        }, {
+          tag: "span",
+          text: "TOM"
+        }]
       }, {
         tag: "button",
         "class": ["btn"],
-        text: "L",
-        parText: "CLAP"
+        children: [{
+          tag: "span",
+          text: "L"
+        }, {
+          tag: "span",
+          text: "TINK"
+        }]
       }]
     }]
   }
@@ -606,6 +651,13 @@ function createKeyboard(app) {
           var tagEl = document.createElement(element.tag);
           tagEl.textContent = element.text;
           tagEl.className = element["class"];
+          if (element.children && element.children.length) {
+            element.children.forEach(function (component) {
+              var comEl = document.createElement(component.tag);
+              comEl.textContent = component.text;
+              tagEl.appendChild(comEl);
+            });
+          }
           sectionEl.appendChild(tagEl);
         });
       }

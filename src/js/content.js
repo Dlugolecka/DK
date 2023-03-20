@@ -1,6 +1,6 @@
 const config = {
   div: {
-    class: ["container"],
+    class: ["keyboard--container"],
     children: [
       {
         tag: "section",
@@ -17,15 +17,78 @@ const config = {
         tag: "section",
         class: ["keyboard--section"],
         children: [
-          { tag: "button", class: ["btn"], text: "W", parText: "CLAP" },
-          { tag: "button", class: ["btn"], text: "S", parText: "CLAP" },
-          { tag: "button", class: ["btn"], text: "D", parText: "CLAP" },
-          { tag: "button", class: ["btn"], text: "F", parText: "CLAP" },
-          { tag: "button", class: ["btn"], text: "G", parText: "CLAP" },
-          { tag: "button", class: ["btn"], text: "H", parText: "CLAP" },
-          { tag: "button", class: ["btn"], text: "J", parText: "CLAP" },
-          { tag: "button", class: ["btn"], text: "K", parText: "CLAP" },
-          { tag: "button", class: ["btn"], text: "L", parText: "CLAP" },
+          {
+            tag: "button",
+            class: ["btn"],
+            children: [
+              { tag: "span", text: "W" },
+              { tag: "span", text: "CLAP" },
+            ],
+          },
+          {
+            tag: "button",
+            class: ["btn"],
+            children: [
+              { tag: "span", text: "S" },
+              { tag: "span", text: "HIHAT" },
+            ],
+          },
+          {
+            tag: "button",
+            class: ["btn"],
+            children: [
+              { tag: "span", text: "D" },
+              { tag: "span", text: "KICK" },
+            ],
+          },
+          {
+            tag: "button",
+            class: ["btn"],
+            children: [
+              { tag: "span", text: "F" },
+              { tag: "span", text: "OPENHAT" },
+            ],
+          },
+          {
+            tag: "button",
+            class: ["btn"],
+            children: [
+              { tag: "span", text: "G" },
+              { tag: "span", text: "BOOM" },
+            ],
+          },
+          {
+            tag: "button",
+            class: ["btn"],
+            children: [
+              { tag: "span", text: "H" },
+              { tag: "span", text: "RIDE" },
+            ],
+          },
+          {
+            tag: "button",
+            class: ["btn"],
+            children: [
+              { tag: "span", text: "J" },
+              { tag: "span", text: "SNARE" },
+            ],
+          },
+          {
+            tag: "button",
+            class: ["btn"],
+            children: [
+              { tag: "span", text: "K" },
+              { tag: "span", text: "TOM" },
+            ],
+          },
+          {
+            tag: "button",
+            class: ["btn"],
+            children: [
+              { tag: "span", text: "L" },
+              { tag: "span", text: "TINK" },
+            ],
+          },
         ],
       },
     ],
@@ -50,6 +113,16 @@ function createKeyboard(app) {
           let tagEl = document.createElement(element.tag);
           tagEl.textContent = element.text;
           tagEl.className = element.class;
+
+          if (element.children && element.children.length) {
+            element.children.forEach((component) => {
+              let comEl = document.createElement(component.tag);
+              comEl.textContent = component.text;
+
+              tagEl.appendChild(comEl);
+            });
+          }
+
           sectionEl.appendChild(tagEl);
         });
       }
