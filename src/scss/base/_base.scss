@@ -1,4 +1,7 @@
 body {
-    background-color: #393232;
-  }
-  
+  background-color: $bg-color-dark;
+}
+
+#app {
+  color: $text-color-primary;
+}

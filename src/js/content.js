@@ -8,7 +8,7 @@ const config = {
         children: [
           {
             tag: "h1",
-            class: ["keyboardHeading"],
+            class: ["heading--text"],
             text: "Bringing the power of a full drum set to your fingertips, anytime, anywhere!",
           },
         ],
