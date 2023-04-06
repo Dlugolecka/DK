@@ -1,0 +1,81 @@
+#app {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+.header--container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.heading--text {
+  display: flex;
+  justify-content: center;
+}
+
+.keyboard--container {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-content: baseline;
+}
+
+.keyboard--section {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+}
+
+.btn {
+  display: flex;
+  flex-flow: column nowrap;
+  @include center();
+}
+
+.footer--container {
+  display: flex;
+  @include center();
+}
+
+@media screen and (max-width: 992px) {
+  .heading--text {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .heading--text {
+    text-align: center;
+    font-size: 1.5rem;
+  }
+
+  .btn {
+    max-height: 100px;
+    max-width: 180px;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .heading--text {
+    text-align: center;
+    font-size: 1.2rem;
+  }
+
+  .btn {
+    max-width: 100%;
+    flex-grow: 2;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  .heading--text {
+    text-align: center;
+    font-size: 1rem;
+  }
+
+  .btn {
+    max-height: 100px;
+    max-width: 180px;
+  }
+} ;

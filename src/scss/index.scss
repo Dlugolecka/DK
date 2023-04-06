@@ -1,4 +1,16 @@
-body {
-  background-color: rgb(224, 160, 160);
-}
+@import "../scss/untils/viariables";
+@import "../scss/untils/mixins";
+@import "../scss/base/base";
+@import "../scss/base/loyout";
+@import "../scss/base//normalize";
+@import "../scss/base/typography";
+@import "../scss/components/header";
+@import "../scss/components/keyboard";
+@import "../scss/components/buttons";
+@import "../scss/components/footer";
+
+
+
+
+
 

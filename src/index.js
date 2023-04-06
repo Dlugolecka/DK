@@ -1,3 +1,4 @@
+import { style } from '../src/scss/index.scss';
 import createApp from '../src/js/app.js';
 import createHeader from '../src/js/header.js';
 import createFooter from '../src/js/footer.js';
