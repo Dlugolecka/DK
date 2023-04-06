@@ -91,6 +91,21 @@ const config = {
           },
         ],
       },
+      {
+        tag: "section",
+        class: ["history--section"],
+        children: [
+          {
+            tag: "h2",
+            class: ["history--text"],
+            text: "History",
+          },
+          {
+            tag: "ul",
+            class: ["history--list"],
+          },
+        ],
+      },
     ],
   },
 };
