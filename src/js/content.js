@@ -129,23 +129,67 @@ function createKeyboard(app) {
           tagEl.textContent = element.text;
           tagEl.className = element.class;
 
-
           if (element.children && element.children.length) {
             element.children.forEach((component) => {
               let comEl = document.createElement(component.tag);
               comEl.textContent = component.text;
 
-              tagEl.setAttribute("data-sound",component.text )
+              tagEl.setAttribute("data-sound", component.text);
 
               tagEl.appendChild(comEl);
             });
           }
 
-          tagEl.addEventListener("click",() => {
+          tagEl.addEventListener("click", () => {
             addToHistory(tagEl.dataset.sound);
-            const audioElement = new Audio(`assets/${tagEl.dataset.sound.toLowerCase()}.wav`);
+            let audioElement = new Audio(
+              `assets/${tagEl.dataset.sound.toLowerCase()}.wav`
+            );
             audioElement.play();
-          })
+          });
+
+          document.addEventListener("keyup", (event) => {
+            let audioElement = new Audio();
+            switch (event.key) {
+              case "w":
+                audioElement = new Audio(`assets/clap.wav`);
+                break;
+
+              case "s":
+                audioElement = new Audio(`assets/hihat.wav`);
+                break;
+
+              case "d":
+                audioElement = new Audio(`assets/kick.wav`);
+                break;
+
+              case "f":
+                audioElement = new Audio(`assets/openhat.wav`);
+                break;
+
+              case "g":
+                audioElement = new Audio(`assets/boom.wav`);
+                break;
+
+              case "h":
+                audioElement = new Audio(`assets/ride.wav`);
+                break;
+
+              case "j":
+                audioElement = new Audio(`assets/snare.wav`);
+                break;
+
+              case "k":
+                audioElement = new Audio(`assets/tom.wav`);
+                break;
+
+              case "l":
+                audioElement = new Audio(`assets/tink.wav`);
+                break;
+            }
+            audioElement.play();
+            //addToHistory(event.key);
+          });
 
           sectionEl.appendChild(tagEl);
         });
@@ -156,12 +200,11 @@ function createKeyboard(app) {
   }
 }
 
-function addToHistory(sound){
-  const list = document.getElementsByClassName('history--list')[0];
-  const li = document.createElement('li');
+function addToHistory(sound) {
+  const list = document.getElementsByClassName("history--list")[0];
+  const li = document.createElement("li");
   li.textContent = sound;
   list.appendChild(li);
 }
-
 
 module.exports = createKeyboard;
