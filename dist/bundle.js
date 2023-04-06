@@ -670,8 +670,10 @@ function createKeyboard(app) {
               tagEl.appendChild(comEl);
             });
           }
-          tagEl.addEventListener("click", function (event) {
+          tagEl.addEventListener("click", function () {
             addToHistory(tagEl.dataset.sound);
+            var audioElement = new Audio("assets/".concat(tagEl.dataset.sound.toLowerCase(), ".wav"));
+            audioElement.play();
           });
           sectionEl.appendChild(tagEl);
         });

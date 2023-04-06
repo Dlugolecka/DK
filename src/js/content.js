@@ -141,10 +141,10 @@ function createKeyboard(app) {
             });
           }
 
-          tagEl.addEventListener("click",(event) => {
+          tagEl.addEventListener("click",() => {
             addToHistory(tagEl.dataset.sound);
-            
-
+            const audioElement = new Audio(`assets/${tagEl.dataset.sound.toLowerCase()}.wav`);
+            audioElement.play();
           })
 
           sectionEl.appendChild(tagEl);
