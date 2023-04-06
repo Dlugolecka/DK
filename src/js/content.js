@@ -129,14 +129,23 @@ function createKeyboard(app) {
           tagEl.textContent = element.text;
           tagEl.className = element.class;
 
+
           if (element.children && element.children.length) {
             element.children.forEach((component) => {
               let comEl = document.createElement(component.tag);
               comEl.textContent = component.text;
 
+              tagEl.setAttribute("data-sound",component.text )
+
               tagEl.appendChild(comEl);
             });
           }
+
+          tagEl.addEventListener("click",(event) => {
+            addToHistory(tagEl.dataset.sound);
+            
+
+          })
 
           sectionEl.appendChild(tagEl);
         });
@@ -146,5 +155,13 @@ function createKeyboard(app) {
     });
   }
 }
+
+function addToHistory(sound){
+  const list = document.getElementsByClassName('history--list')[0];
+  const li = document.createElement('li');
+  li.textContent = sound;
+  list.appendChild(li);
+}
+
 
 module.exports = createKeyboard;
