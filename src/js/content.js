@@ -148,48 +148,7 @@ function createKeyboard(app) {
             audioElement.play();
           });
 
-          document.addEventListener("keyup", (event) => {
-            let audioElement = new Audio();
-            switch (event.key) {
-              case "w":
-                audioElement = new Audio(`assets/clap.wav`);
-                break;
 
-              case "s":
-                audioElement = new Audio(`assets/hihat.wav`);
-                break;
-
-              case "d":
-                audioElement = new Audio(`assets/kick.wav`);
-                break;
-
-              case "f":
-                audioElement = new Audio(`assets/openhat.wav`);
-                break;
-
-              case "g":
-                audioElement = new Audio(`assets/boom.wav`);
-                break;
-
-              case "h":
-                audioElement = new Audio(`assets/ride.wav`);
-                break;
-
-              case "j":
-                audioElement = new Audio(`assets/snare.wav`);
-                break;
-
-              case "k":
-                audioElement = new Audio(`assets/tom.wav`);
-                break;
-
-              case "l":
-                audioElement = new Audio(`assets/tink.wav`);
-                break;
-            }
-            audioElement.play();
-            //addToHistory(event.key);
-          });
 
           sectionEl.appendChild(tagEl);
         });
@@ -198,6 +157,50 @@ function createKeyboard(app) {
       tag_container.appendChild(sectionEl);
     });
   }
+
+  document.addEventListener("keyup", (event) => {
+    console.log(event.key)
+    let audioElement = new Audio();
+    switch (event.key) {
+      case "w":
+        audioElement = new Audio(`assets/clap.wav`);
+        break;
+
+      case "s":
+        audioElement = new Audio(`assets/hihat.wav`);
+        break;
+
+      case "d":
+        audioElement = new Audio(`assets/kick.wav`);
+        break;
+
+      case "f":
+        audioElement = new Audio(`assets/openhat.wav`);
+        break;
+
+      case "g":
+        audioElement = new Audio(`assets/boom.wav`);
+        break;
+
+      case "h":
+        audioElement = new Audio(`assets/ride.wav`);
+        break;
+
+      case "j":
+        audioElement = new Audio(`assets/snare.wav`);
+        break;
+
+      case "k":
+        audioElement = new Audio(`assets/tom.wav`);
+        break;
+
+      case "l":
+        audioElement = new Audio(`assets/tink.wav`);
+        break;
+    }
+    audioElement.play();
+    addToHistory(event.key);
+  });
 }
 
 function addToHistory(sound) {
