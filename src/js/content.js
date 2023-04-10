@@ -148,8 +148,6 @@ function createKeyboard(app) {
             audioElement.play();
           });
 
-
-
           sectionEl.appendChild(tagEl);
         });
       }
@@ -159,47 +157,50 @@ function createKeyboard(app) {
   }
 
   document.addEventListener("keyup", (event) => {
-    console.log(event.key)
-    let audioElement = new Audio();
-    switch (event.key) {
-      case "w":
-        audioElement = new Audio(`assets/clap.wav`);
-        break;
+    console.log(event.key);
+    let pressedBtn = /([wsdfghjkl])/gi;
+    if (pressedBtn.test(event.key)) {
+      let audioElement = new Audio();
+      switch (event.key) {
+        case "w":
+          audioElement = new Audio(`assets/clap.wav`);
+          break;
 
-      case "s":
-        audioElement = new Audio(`assets/hihat.wav`);
-        break;
+        case "s":
+          audioElement = new Audio(`assets/hihat.wav`);
+          break;
 
-      case "d":
-        audioElement = new Audio(`assets/kick.wav`);
-        break;
+        case "d":
+          audioElement = new Audio(`assets/kick.wav`);
+          break;
 
-      case "f":
-        audioElement = new Audio(`assets/openhat.wav`);
-        break;
+        case "f":
+          audioElement = new Audio(`assets/openhat.wav`);
+          break;
 
-      case "g":
-        audioElement = new Audio(`assets/boom.wav`);
-        break;
+        case "g":
+          audioElement = new Audio(`assets/boom.wav`);
+          break;
 
-      case "h":
-        audioElement = new Audio(`assets/ride.wav`);
-        break;
+        case "h":
+          audioElement = new Audio(`assets/ride.wav`);
+          break;
 
-      case "j":
-        audioElement = new Audio(`assets/snare.wav`);
-        break;
+        case "j":
+          audioElement = new Audio(`assets/snare.wav`);
+          break;
 
-      case "k":
-        audioElement = new Audio(`assets/tom.wav`);
-        break;
+        case "k":
+          audioElement = new Audio(`assets/tom.wav`);
+          break;
 
-      case "l":
-        audioElement = new Audio(`assets/tink.wav`);
-        break;
+        case "l":
+          audioElement = new Audio(`assets/tink.wav`);
+          break;
+      }
+      audioElement.play();
+      addToHistory(`Pressed button:  ${event.key}`);
     }
-    audioElement.play();
-    addToHistory(event.key);
   });
 }
 
