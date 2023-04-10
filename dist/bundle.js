@@ -670,11 +670,13 @@ function createKeyboard(app) {
               tagEl.appendChild(comEl);
             });
           }
-          tagEl.addEventListener("click", function () {
-            addToHistory(tagEl.dataset.sound);
-            var audioElement = new Audio("assets/".concat(tagEl.dataset.sound.toLowerCase(), ".wav"));
-            audioElement.play();
-          });
+          if (tagEl.classList.contains("btn")) {
+            tagEl.addEventListener("click", function () {
+              addToHistory(tagEl.dataset.sound);
+              var audioElement = new Audio("assets/".concat(tagEl.dataset.sound.toLowerCase(), ".wav"));
+              audioElement.play();
+            });
+          }
           sectionEl.appendChild(tagEl);
         });
       }
@@ -682,7 +684,6 @@ function createKeyboard(app) {
     });
   }
   document.addEventListener("keyup", function (event) {
-    console.log(event.key);
     var pressedBtn = /([wsdfghjkl])/gi;
     if (pressedBtn.test(event.key)) {
       var audioElement = new Audio();
